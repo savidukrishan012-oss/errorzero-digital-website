@@ -166,7 +166,7 @@ export default function Services() {
                     <h3 className="mb-4 text-2xl font-bold">How to get started</h3>
                     <p className="mb-6 text-white/70">
                       Ready to begin? Contact us to discuss your project requirements
-                      and we'll provide a custom quote tailored to your needs.
+                      and we&apos;ll provide a custom quote tailored to your needs.
                     </p>
                     <Link
                       href="/contact"
@@ -191,7 +191,7 @@ export default function Services() {
                 Need something custom?
               </h2>
               <p className="mb-12 text-lg text-white/70 sm:text-xl">
-                We're always open to discussing unique projects and custom solutions.
+                We&apos;re always open to discussing unique projects and custom solutions.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 <a

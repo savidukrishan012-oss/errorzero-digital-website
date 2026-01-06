@@ -69,7 +69,7 @@ export default function Contact() {
                 Get In Touch
               </h1>
               <p className="mb-12 text-lg text-white/70 sm:text-xl md:text-2xl">
-                Ready to start your project? Let's discuss how we can help.
+                Ready to start your project? Let&apos;s discuss how we can help.
               </p>
             </div>
           </SectionReveal>

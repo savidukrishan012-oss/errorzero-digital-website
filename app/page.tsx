@@ -737,7 +737,7 @@ export default function Home() {
                 />
               </motion.div>
               <p className="mb-12 text-lg text-white/70 sm:text-xl">
-                Let's create something exceptional together.
+                Let&apos;s create something exceptional together.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 <a

@@ -38,7 +38,7 @@ export default function About() {
                 Our Mission
               </h2>
               <p className="mb-6 text-lg leading-relaxed text-white/80 sm:text-xl">
-                At ErrorZero Digital, we're committed to delivering digital excellence
+                At ErrorZero Digital, we&apos;re committed to delivering digital excellence
                 with zero compromises. We combine cutting-edge technology, creative
                 vision, and meticulous attention to detail to help brands stand out in
                 an increasingly competitive digital landscape.
@@ -157,7 +157,7 @@ export default function About() {
           <SectionReveal>
             <div className="mx-auto max-w-3xl rounded-2xl border border-white/10 bg-white/5 p-12 text-center backdrop-blur-sm">
               <h2 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-                Let's Work Together
+                Let&apos;s Work Together
               </h2>
               <p className="mb-12 text-lg text-white/70 sm:text-xl">
                 Ready to elevate your digital presence? Get in touch today.
