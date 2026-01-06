@@ -10,8 +10,8 @@ export default function FixedLogoPlate() {
       className="pointer-events-auto"
       style={{
         position: 'fixed',
-        top: '20px',
-        left: '20px',
+        top: '24px',
+        left: '24px',
         zIndex: 10000,
         transform: 'none',
         willChange: 'auto',
@@ -23,22 +23,28 @@ export default function FixedLogoPlate() {
         aria-label="Go to Home"
         className="
           group block
-          w-[500px] h-[170px] sm:w-[650px] sm:h-[220px]
-          rounded-2xl overflow-hidden
-          bg-transparent
+          w-[110px] h-auto
+          sm:w-[140px]
           transition-transform duration-300
           hover:-translate-y-[2px] hover:scale-[1.02]
           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/70
         "
+        style={{
+          filter: 'drop-shadow(0 8px 24px rgba(0, 0, 0, 0.4)) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2))',
+        }}
       >
-        <div className="relative z-10 h-full w-full p-0 flex items-center justify-center">
+        <div className="relative z-10 w-full h-full flex items-center justify-center">
           <Image
             src="/brand/logo.jpg"
             alt="ErrorZero Digital"
-            width={2400}
-            height={800}
+            width={420}
+            height={140}
             priority
-            className="w-full h-full object-contain"
+            unoptimized
+            className="w-full h-auto object-contain"
+            style={{
+              filter: 'drop-shadow(0 -1px 2px rgba(255, 255, 255, 0.1))',
+            }}
           />
         </div>
       </Link>

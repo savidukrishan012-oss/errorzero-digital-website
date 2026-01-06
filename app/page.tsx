@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { useReducedMotion } from "@/components/useReducedMotion";
 import Container from "@/components/Container";
@@ -11,19 +12,33 @@ export default function Home() {
   const shouldReduceMotion = useReducedMotion();
 
   const headlineLines = [
-    "AI-powered edits.",
-    "Cinematic videos.",
-    "Zero errors.",
+    "Logo Design.",
+    "Photo Editing.",
+    "Website Development.",
   ];
 
   return (
     <>
       {/* Hero Section - Animated Title Display */}
-      <section className="hero-bg flex items-center justify-center" data-cursor-color="#f5c16c">
-        <div className="hero-noise" />
+      <section className="relative flex items-center justify-center min-h-[100svh] overflow-hidden" data-cursor-color="#f5c16c">
+        {/* Stable background image - no flicker */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/brand/hero-bg.jpg"
+            alt=""
+            fill
+            priority
+            unoptimized
+            className="object-cover object-center"
+            style={{ opacity: 1 }}
+          />
+        </div>
 
-        {/* Semi-transparent overlay for text readability */}
-        <div className="absolute inset-0 bg-black/40 z-[1]" />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-black/70 z-[1]" />
+
+        {/* Noise overlay */}
+        <div className="hero-noise absolute inset-0 z-[1] pointer-events-none" />
 
         {/* Main animated title */}
         <div className="relative z-10 mx-auto max-w-6xl px-6 text-center">
@@ -48,32 +63,19 @@ export default function Home() {
                 }}
               >
                 <motion.h1
-                  className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black leading-tight tracking-tight"
-                  animate={
-                    shouldReduceMotion
-                      ? {}
-                      : {
-                          backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                  className={`text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black leading-tight tracking-tight ${
+                    index === headlineLines.length - 1 ? "" : "text-white"
+                  }`}
+                  style={
+                    index === headlineLines.length - 1
+                      ? {
+                          backgroundImage: "linear-gradient(90deg, #B31217 0%, #D4AF37 100%)",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                          backgroundClip: "text",
                         }
+                      : {}
                   }
-                  transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: "linear",
-                    delay: index * 0.3,
-                  }}
-                  style={{
-                    backgroundImage:
-                      index === 0
-                        ? "linear-gradient(90deg, #9b1c1c 0%, #dc2626 50%, #3b82f6 100%)"
-                        : index === 1
-                        ? "linear-gradient(90deg, #3b82f6 0%, #2563eb 50%, #9b1c1c 100%)"
-                        : "linear-gradient(90deg, #f5c16c 0%, #c97c2d 50%, #3b82f6 100%)",
-                    backgroundSize: "200% 100%",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                  }}
                 >
                   {line}
                 </motion.h1>
@@ -99,15 +101,9 @@ export default function Home() {
                 delay: 0.8,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="mb-12 text-lg sm:text-xl md:text-2xl font-medium tracking-wide bg-clip-text text-transparent"
-              style={{
-                backgroundImage:
-                  "linear-gradient(90deg, #9b1c1c 0%, #c97c2d 50%, #f5c16c 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
+              className="mb-12 text-lg sm:text-xl md:text-2xl font-medium tracking-wide text-white/90"
             >
-              Logo Design. Photo Editing. Website Development.
+              AI-powered edits. Cinematic videos. Zero errors on your website.
             </motion.p>
 
             {/* CTA Buttons */}

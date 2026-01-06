@@ -129,47 +129,7 @@ html {
   transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) translateY(-4px);
 }
 
-/* Hero background - stable CSS implementation */
-.hero-bg {
-  position: relative;
-  min-height: 100svh;
-  overflow: hidden;
-  z-index: 0;
-  isolation: isolate;
-  background: #B6BBC4;
-  background-image: url("/brand/hero-bg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Background photo layer */
-.hero-bg::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  background-image: url("/brand/background img.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transform: scale(1.06);
-  animation: heroZoomOut 1200ms ease-out forwards;
-}
-
-/* Cinematic overlay */
-.hero-bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.55),
-    rgba(0,0,0,0.25),
-    rgba(0,0,0,0.75)
-  );
-}
+/* Hero background - removed CSS implementation, now using Image component */
 
 /* optional noise element */
 .hero-noise {
