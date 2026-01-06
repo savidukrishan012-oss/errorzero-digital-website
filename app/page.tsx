@@ -11,16 +11,10 @@ import MagneticButton from "@/components/MagneticButton";
 export default function Home() {
   const shouldReduceMotion = useReducedMotion();
 
-  const headlineLines = [
-    "Logo Design.",
-    "Photo Editing.",
-    "Website Development.",
-  ];
-
   return (
     <>
-      {/* Hero Section - Animated Title Display */}
-      <section className="relative flex items-center justify-center min-h-[100svh] overflow-hidden" data-cursor-color="#f5c16c">
+      {/* Hero Section - Background Image Only */}
+      <section className="relative min-h-[100svh] overflow-hidden" data-cursor-color="#f5c16c">
         {/* Stable background image - no flicker */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -34,113 +28,47 @@ export default function Home() {
           />
         </div>
 
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-black/70 z-[1]" />
+        {/* Minimal overlay - only if needed, very light to keep background text visible */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30 z-[1]" />
 
         {/* Noise overlay */}
         <div className="hero-noise absolute inset-0 z-[1] pointer-events-none" />
 
-        {/* Main animated title */}
-        <div className="relative z-10 mx-auto max-w-6xl px-6 text-center">
-          <div className="space-y-4">
-            {headlineLines.map((line, index) => (
-              <motion.div
-                key={line}
-                initial={
-                  shouldReduceMotion
-                    ? { opacity: 1, y: 0 }
-                    : { opacity: 0, y: 50, scale: 0.9 }
-                }
-                animate={
-                  shouldReduceMotion
-                    ? { opacity: 1, y: 0 }
-                    : { opacity: 1, y: 0, scale: 1 }
-                }
-                transition={{
-                  duration: 1,
-                  delay: index * 0.2,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-              >
-                <motion.h1
-                  className={`text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black leading-tight tracking-tight ${
-                    index === headlineLines.length - 1 ? "" : "text-white"
-                  }`}
-                  style={
-                    index === headlineLines.length - 1
-                      ? {
-                          backgroundImage: "linear-gradient(90deg, #B31217 0%, #D4AF37 100%)",
-                          WebkitBackgroundClip: "text",
-                          WebkitTextFillColor: "transparent",
-                          backgroundClip: "text",
-                        }
-                      : {}
-                  }
-                >
-                  {line}
-                </motion.h1>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="mt-16">
-            {/* Tagline with red to gold gradient */}
-            <motion.p
-              initial={
-                shouldReduceMotion
-                  ? { opacity: 1 }
-                  : { opacity: 0, filter: "blur(10px)" }
-              }
-              animate={
-                shouldReduceMotion
-                  ? { opacity: 1 }
-                  : { opacity: 1, filter: "blur(0px)" }
-              }
-              transition={{
-                duration: 0.8,
-                delay: 0.8,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className="mb-12 text-lg sm:text-xl md:text-2xl font-medium tracking-wide text-white/90"
+        {/* Minimal CTA buttons - positioned at bottom-left to not overlap background text */}
+        <div className="absolute bottom-8 left-6 sm:left-12 z-10">
+          <motion.div
+            initial={
+              shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }
+            }
+            animate={
+              shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }
+            }
+            transition={{
+              duration: 0.6,
+              delay: 0.5,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="flex flex-col gap-3 sm:flex-row"
+          >
+            <MagneticButton href="/work" as="a" data-cursor="view">
+              View Work
+            </MagneticButton>
+            <Link
+              href="/contact"
+              className="rounded-full border-2 border-white/30 bg-white/5 px-6 py-3 text-center text-sm font-semibold backdrop-blur-sm transition-all hover:border-white/50 hover:bg-white/10 focus:border-white/50"
+              data-cursor="open"
             >
-              AI-powered edits. Cinematic videos. Zero errors on your website.
-            </motion.p>
-
-            {/* CTA Buttons */}
-            <motion.div
-              initial={
-                shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }
-              }
-              animate={
-                shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }
-              }
-              transition={{
-                duration: 0.6,
-                delay: 1,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className="flex flex-col gap-4 sm:flex-row justify-center"
-            >
-              <MagneticButton href="/work" as="a" data-cursor="view">
-                View Work
-              </MagneticButton>
-              <Link
-                href="/contact"
-                className="rounded-full border-2 border-white/30 bg-white/5 px-8 py-4 text-center font-semibold backdrop-blur-sm transition-all hover:border-white/50 hover:bg-white/10 focus:border-white/50"
-                data-cursor="open"
-              >
-                Get a Quote
-              </Link>
-            </motion.div>
-          </div>
+              Get a Quote
+            </Link>
+          </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator - bottom right */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2"
+          transition={{ delay: 1 }}
+          className="absolute bottom-8 right-6 sm:right-12 z-10"
         >
           <motion.div
             animate={
