@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   title: "Zyraxe",
   description: "Your digital services partner",
   other: {
-    "google-site-verification": "google76e94b27de4e0a18",
+    "google-site-verification": "M2IeSWFn7FUbGemVaBB9TB02WUyfl3vQula6NXJyE4o",
   },
 };
 
