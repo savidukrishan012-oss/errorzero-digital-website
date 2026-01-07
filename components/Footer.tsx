@@ -83,12 +83,31 @@ export default function Footer() {
                 WhatsApp: 0705278929
               </a>
               <a
-                href="https://web.facebook.com/share/p/1C3zHvYNUy/"
+                href="https://www.facebook.com/share/1GWetyDHx6/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="ErrorZero Digital on Facebook"
                 className="link-underline text-white/60 transition-colors hover:text-cyan-400"
               >
                 Facebook
+              </a>
+              <a
+                href="https://www.tiktok.com/@errorzero_digital?is_from_webapp=1&sender_device=pc"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="ErrorZero Digital on TikTok"
+                className="link-underline text-white/60 transition-colors hover:text-cyan-400"
+              >
+                TikTok
+              </a>
+              <a
+                href="https://www.instagram.com/errorzero_digital/?utm_source=qr#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="ErrorZero Digital on Instagram"
+                className="link-underline text-white/60 transition-colors hover:text-cyan-400"
+              >
+                Instagram
               </a>
             </div>
           </div>
