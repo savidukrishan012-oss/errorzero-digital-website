@@ -20,8 +20,11 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "ErrorZero Digital | AI-powered edits. Cinematic videos. Zero errors.",
-  description: "AI-powered edits. Cinematic videos. Zero errors on your website. Logo design, AI photo editing, video creation, website development & error fixing.",
+  title: "Zyraxe",
+  description: "Your digital services partner",
+  other: {
+    "google-site-verification": "google76e94b27de4e0a18",
+  },
 };
 
 export default function RootLayout({
