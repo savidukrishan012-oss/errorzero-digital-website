@@ -22,6 +22,17 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Zyraxe",
   description: "Your digital services partner",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   other: {
     "google-site-verification": "M2IeSWFn7FUbGemVaBB9TB02WUyfl3vQula6NXJyE4o",
   },
