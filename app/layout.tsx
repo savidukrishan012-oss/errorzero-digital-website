@@ -5,6 +5,7 @@ import PageTransitionProvider from "@/components/PageTransitionProvider";
 import SiteShell from "@/components/SiteShell";
 import FixedLogoPlate from "@/components/FixedLogoPlate";
 import CustomCursor from "@/components/CustomCursor";
+import WhatsAppFloatingButton from "@/components/WhatsAppFloatingButton";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({
               <body>
                 <CustomCursor />
                 <FixedLogoPlate />
+                <WhatsAppFloatingButton />
                 <PageTransitionProvider>
                   <SiteShell>{children}</SiteShell>
                 </PageTransitionProvider>
