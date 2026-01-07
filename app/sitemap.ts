@@ -5,10 +5,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
   return [
-    { url: `${baseUrl}/`, lastModified },
-    { url: `${baseUrl}/about`, lastModified },
-    { url: `${baseUrl}/services`, lastModified },
-    { url: `${baseUrl}/work`, lastModified },
-    { url: `${baseUrl}/contact`, lastModified },
+    {
+      url: `${baseUrl}/`,
+      lastModified,
+      priority: 1.0,
+    },
+    {
+      url: `${baseUrl}/about`,
+      lastModified,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/services`,
+      lastModified,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/work`,
+      lastModified,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/contact`,
+      lastModified,
+      priority: 0.8,
+    },
   ];
 }
